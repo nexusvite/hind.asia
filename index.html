@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>hind.asia — Coming Soon</title>
+  <meta name="description" content="hind.asia — TODO: write a one-line description here once you fill in the tagline below." />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Open Graph (so the link looks good when shared) -->
+  <meta property="og:title" content="hind.asia" />
+  <meta property="og:description" content="Coming soon." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://hind.asia" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap"
+    rel="stylesheet"
+  />
+
+  <style>
+    :root {
+      --bg-start: #0f172a;     /* deep slate */
+      --bg-end:   #1e1b4b;     /* deep indigo */
+      --accent:   #f59e0b;     /* warm amber — evokes saffron / sunrise */
+      --text:     #f8fafc;
+      --muted:    #94a3b8;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html, body { height: 100%; }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+      color: var(--text);
+      background: linear-gradient(135deg, var(--bg-start) 0%, var(--bg-end) 100%);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    /* subtle ambient glow behind the content */
+    body::before {
+      content: "";
+      position: absolute;
+      width: 600px;
+      height: 600px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(245, 158, 11, 0.15) 0%, transparent 70%);
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      filter: blur(40px);
+      z-index: 0;
+      animation: pulse 8s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 0.5; transform: translate(-50%, -50%) scale(1); }
+      50%      { opacity: 0.8; transform: translate(-50%, -50%) scale(1.1); }
+    }
+
+    main {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      max-width: 640px;
+      animation: fadeUp 0.9s ease-out;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .brand {
+      font-size: clamp(3rem, 10vw, 6rem);
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      line-height: 1;
+      margin-bottom: 0.5rem;
+    }
+
+    .brand .dot { color: var(--accent); }
+
+    .tagline {
+      font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+      font-weight: 300;
+      color: var(--muted);
+      margin-bottom: 2.5rem;
+      line-height: 1.5;
+    }
+
+    .status {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.5rem 1rem;
+      background: rgba(245, 158, 11, 0.1);
+      border: 1px solid rgba(245, 158, 11, 0.3);
+      border-radius: 999px;
+      font-size: 0.875rem;
+      color: var(--accent);
+      margin-bottom: 2rem;
+    }
+
+    .status::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent);
+      animation: blink 2s ease-in-out infinite;
+    }
+
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50%      { opacity: 0.3; }
+    }
+
+    .contact {
+      margin-top: 1rem;
+      font-size: 0.95rem;
+      color: var(--muted);
+    }
+
+    .contact a {
+      color: var(--accent);
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.2s ease;
+    }
+
+    .contact a:hover { border-bottom-color: var(--accent); }
+
+    footer {
+      position: absolute;
+      bottom: 1.5rem;
+      font-size: 0.8rem;
+      color: var(--muted);
+      z-index: 1;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="status">Coming Soon</div>
+    <h1 class="brand">hind<span class="dot">.</span>asia</h1>
+
+    <!--
+      TODO: Replace the tagline below.
+      This is the ONE line that tells visitors what hind.asia is.
+      See the conversation for guidance on what makes a strong tagline.
+    -->
+    <p class="tagline">
+      [ Your tagline goes here — see chat for guidance ]
+    </p>
+
+    <p class="contact">
+      For inquiries: <a href="mailto:hello@hind.asia">hello@hind.asia</a>
+    </p>
+  </main>
+
+  <footer>&copy; 2026 hind.asia &middot; All rights reserved</footer>
+</body>
+</html>
