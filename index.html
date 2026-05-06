@@ -3,34 +3,35 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>hind.asia — Coming Soon</title>
-  <meta name="description" content="hind.asia — TODO: write a one-line description here once you fill in the tagline below." />
+  <title>hind.asia — Free & Premium Subdomains, Coming Soon</title>
+  <meta name="description" content="hind.asia — get your own subdomain on a memorable Asian TLD. Free tier launching soon, premium reservations open." />
   <meta name="robots" content="index, follow" />
 
-  <!-- Open Graph (so the link looks good when shared) -->
-  <meta property="og:title" content="hind.asia" />
-  <meta property="og:description" content="Coming soon." />
+  <meta property="og:title" content="hind.asia — Subdomains for Asia" />
+  <meta property="og:description" content="Free and premium subdomains on hind.asia. Reserve yours before launch." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://hind.asia" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;800&family=JetBrains+Mono:wght@500&display=swap"
     rel="stylesheet"
   />
 
   <style>
     :root {
-      --bg-start: #0f172a;     /* deep slate */
-      --bg-end:   #1e1b4b;     /* deep indigo */
-      --accent:   #f59e0b;     /* warm amber — evokes saffron / sunrise */
+      --bg-start: #0f172a;
+      --bg-end:   #1e1b4b;
+      --accent:   #f59e0b;
+      --accent-soft: rgba(245, 158, 11, 0.12);
       --text:     #f8fafc;
       --muted:    #94a3b8;
+      --card:     rgba(255, 255, 255, 0.04);
+      --border:   rgba(255, 255, 255, 0.08);
     }
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
-
     html, body { height: 100%; }
 
     body {
@@ -42,21 +43,18 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      padding: 2rem;
+      padding: 2rem 1.5rem 4rem;
       overflow-x: hidden;
       position: relative;
     }
 
-    /* subtle ambient glow behind the content */
     body::before {
       content: "";
       position: absolute;
-      width: 600px;
-      height: 600px;
+      width: 600px; height: 600px;
       border-radius: 50%;
-      background: radial-gradient(circle, rgba(245, 158, 11, 0.15) 0%, transparent 70%);
-      top: 50%;
-      left: 50%;
+      background: radial-gradient(circle, rgba(245, 158, 11, 0.18) 0%, transparent 70%);
+      top: 30%; left: 50%;
       transform: translate(-50%, -50%);
       filter: blur(40px);
       z-index: 0;
@@ -65,14 +63,15 @@
 
     @keyframes pulse {
       0%, 100% { opacity: 0.5; transform: translate(-50%, -50%) scale(1); }
-      50%      { opacity: 0.8; transform: translate(-50%, -50%) scale(1.1); }
+      50%      { opacity: 0.85; transform: translate(-50%, -50%) scale(1.1); }
     }
 
     main {
       position: relative;
       z-index: 1;
       text-align: center;
-      max-width: 640px;
+      max-width: 720px;
+      width: 100%;
       animation: fadeUp 0.9s ease-out;
     }
 
@@ -81,41 +80,24 @@
       to   { opacity: 1; transform: translateY(0); }
     }
 
-    .brand {
-      font-size: clamp(3rem, 10vw, 6rem);
-      font-weight: 800;
-      letter-spacing: -0.04em;
-      line-height: 1;
-      margin-bottom: 0.5rem;
-    }
-
-    .brand .dot { color: var(--accent); }
-
-    .tagline {
-      font-size: clamp(1.1rem, 2.5vw, 1.5rem);
-      font-weight: 300;
-      color: var(--muted);
-      margin-bottom: 2.5rem;
-      line-height: 1.5;
-    }
-
     .status {
       display: inline-flex;
       align-items: center;
       gap: 0.5rem;
       padding: 0.5rem 1rem;
-      background: rgba(245, 158, 11, 0.1);
+      background: var(--accent-soft);
       border: 1px solid rgba(245, 158, 11, 0.3);
       border-radius: 999px;
-      font-size: 0.875rem;
+      font-size: 0.825rem;
+      font-weight: 500;
       color: var(--accent);
       margin-bottom: 2rem;
+      letter-spacing: 0.02em;
     }
 
     .status::before {
       content: "";
-      width: 8px;
-      height: 8px;
+      width: 8px; height: 8px;
       border-radius: 50%;
       background: var(--accent);
       animation: blink 2s ease-in-out infinite;
@@ -126,25 +108,123 @@
       50%      { opacity: 0.3; }
     }
 
-    .contact {
-      margin-top: 1rem;
+    .brand {
+      font-size: clamp(2.75rem, 9vw, 5rem);
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      line-height: 1;
+      margin-bottom: 1rem;
+    }
+    .brand .dot { color: var(--accent); }
+
+    .tagline {
+      font-size: clamp(1.05rem, 2.2vw, 1.35rem);
+      font-weight: 300;
+      color: var(--muted);
+      margin-bottom: 3rem;
+      line-height: 1.6;
+    }
+
+    .demo {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.85rem 1.5rem;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: clamp(0.95rem, 2vw, 1.15rem);
+      margin-bottom: 3rem;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.2);
+    }
+    .demo .scheme { color: var(--muted); }
+    .demo .you {
+      color: var(--accent);
+      animation: glow 3s ease-in-out infinite;
+    }
+    .demo .root { color: var(--text); font-weight: 500; }
+
+    @keyframes glow {
+      0%, 100% { text-shadow: 0 0 0 transparent; }
+      50%      { text-shadow: 0 0 12px rgba(245, 158, 11, 0.6); }
+    }
+
+    .tiers {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+      margin-bottom: 2.5rem;
+    }
+
+    @media (max-width: 520px) {
+      .tiers { grid-template-columns: 1fr; }
+    }
+
+    .tier {
+      padding: 1.5rem 1.25rem;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      text-align: left;
+      backdrop-filter: blur(10px);
+      transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+    .tier:hover {
+      transform: translateY(-2px);
+      border-color: rgba(245, 158, 11, 0.3);
+    }
+
+    .tier-label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.5rem;
+    }
+    .tier h3 {
+      font-size: 1.15rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+    .tier p {
+      font-size: 0.9rem;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    .cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.85rem 1.75rem;
+      background: var(--accent);
+      color: #1f1b0f;
+      font-weight: 600;
       font-size: 0.95rem;
+      border-radius: 999px;
+      text-decoration: none;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      box-shadow: 0 6px 24px rgba(245, 158, 11, 0.3);
+    }
+    .cta:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 10px 32px rgba(245, 158, 11, 0.45);
+    }
+    .cta::after { content: "→"; transition: transform 0.2s ease; }
+    .cta:hover::after { transform: translateX(3px); }
+
+    .cta-note {
+      margin-top: 1rem;
+      font-size: 0.85rem;
       color: var(--muted);
     }
-
-    .contact a {
-      color: var(--accent);
-      text-decoration: none;
-      border-bottom: 1px solid transparent;
-      transition: border-color 0.2s ease;
-    }
-
-    .contact a:hover { border-bottom-color: var(--accent); }
 
     footer {
       position: absolute;
       bottom: 1.5rem;
-      font-size: 0.8rem;
+      font-size: 0.78rem;
       color: var(--muted);
       z-index: 1;
     }
@@ -152,23 +232,38 @@
 </head>
 <body>
   <main>
-    <div class="status">Coming Soon</div>
+    <div class="status">Launching Soon</div>
+
     <h1 class="brand">hind<span class="dot">.</span>asia</h1>
 
-    <!--
-      TODO: Replace the tagline below.
-      This is the ONE line that tells visitors what hind.asia is.
-      See the conversation for guidance on what makes a strong tagline.
-    -->
     <p class="tagline">
-      [ Your tagline goes here — see chat for guidance ]
+      Claim your own subdomain on a memorable Asian TLD.<br />
+      Free tier for everyone, premium names available on reservation.
     </p>
 
-    <p class="contact">
-      For inquiries: <a href="mailto:hello@hind.asia">hello@hind.asia</a>
-    </p>
+    <div class="demo" aria-label="example subdomain">
+      <span class="scheme">https://</span><span class="you">yourname</span><span class="root">.hind.asia</span>
+    </div>
+
+    <div class="tiers">
+      <div class="tier">
+        <div class="tier-label">Free</div>
+        <h3>Starter Subdomains</h3>
+        <p>Grab a free subdomain for your project, portfolio, or side hustle. DNS records included.</p>
+      </div>
+      <div class="tier">
+        <div class="tier-label">Premium</div>
+        <h3>Reserved Names</h3>
+        <p>Short, brandable, and category-leading subdomains for businesses and creators.</p>
+      </div>
+    </div>
+
+    <a class="cta" href="mailto:hello@hind.asia?subject=Reserve%20a%20subdomain%20on%20hind.asia&body=Hi%2C%0A%0AI%27d%20like%20to%20reserve%3A%20yourname.hind.asia%0A%0AThanks!">
+      Reserve early access
+    </a>
+    <p class="cta-note">Email <a href="mailto:hello@hind.asia" style="color: var(--accent); text-decoration: none;">hello@hind.asia</a> to request a name.</p>
   </main>
 
-  <footer>&copy; 2026 hind.asia &middot; All rights reserved</footer>
+  <footer>&copy; 2026 hind.asia &middot; Subdomain registry for Asia</footer>
 </body>
 </html>
